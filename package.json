@@ -1,0 +1,21 @@
+{
+  "name": "ursula-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "OpenClaw /ursula command that reads the latest assistant reply and sends it through TTS",
+  "scripts": {
+    "check": "node scripts/check.mjs"
+  },
+  "openclaw": {
+    "extensions": [
+      "./src/index.js"
+    ],
+    "runtimeExtensions": [
+      "./src/index.js"
+    ]
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

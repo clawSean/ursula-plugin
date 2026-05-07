@@ -1,0 +1,15 @@
+{
+  "id": "ursula",
+  "name": "Ursula",
+  "version": "0.1.0",
+  "description": "Adds /ursula to read the latest assistant reply and send it through the configured TTS provider.",
+  "activation": {
+    "onStartup": true,
+    "onCommands": ["ursula"]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}
