@@ -1,6 +1,6 @@
-# Ursula
+# Ursula 🦞
 
-Minimal OpenClaw plugin for `/ursula`.
+Tiny OpenClaw spell for `/ursula` — pull the latest assistant reply, run it through TTS, and drop it back in chat as a voice note.
 
 ## What it does
 
@@ -8,6 +8,13 @@ Minimal OpenClaw plugin for `/ursula`.
 - Sends that exact text through the configured TTS provider.
 - Returns the audio in chat as a voice note / audio attachment.
 - Does not call the agent loop or request a fresh model response.
+
+## Vibe
+
+- 🦞 crustacean-approved
+- 🔊 talky, not chatty
+- 🎭 a little theatrical
+- ⚙️ one command, one job
 
 ## Usage
 
