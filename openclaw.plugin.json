@@ -2,7 +2,7 @@
   "id": "ursula",
   "name": "Ursula",
   "version": "0.1.0",
-  "description": "Adds /ursula to read the latest assistant reply and send it through the configured TTS provider.",
+  "description": "Queen Ursula holds all the voices. /ursula petitions her to release one from the deep.",
   "activation": {
     "onStartup": true,
     "onCommands": ["ursula"]

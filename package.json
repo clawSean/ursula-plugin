@@ -5,7 +5,8 @@
   "type": "module",
   "description": "OpenClaw /ursula command that reads the latest assistant reply and sends it through TTS",
   "scripts": {
-    "check": "node scripts/check.mjs"
+    "check": "node scripts/check.mjs",
+    "test": "node scripts/check.mjs"
   },
   "openclaw": {
     "extensions": [
