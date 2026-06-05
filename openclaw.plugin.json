@@ -7,6 +7,12 @@
     "onStartup": true,
     "onCommands": ["ursula"]
   },
+  "commandAliases": [
+    {
+      "name": "ursula",
+      "kind": "runtime-slash"
+    }
+  ],
   "configSchema": {
     "type": "object",
     "additionalProperties": false,

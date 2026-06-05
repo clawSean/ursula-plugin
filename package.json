@@ -1,13 +1,37 @@
 {
   "name": "ursula-plugin",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
-  "description": "OpenClaw /ursula command that reads the latest assistant reply and sends it through TTS",
+  "description": "OpenClaw /ursula command that releases recent assistant replies as TTS voice notes",
+  "license": "MIT",
+  "author": "clawSean",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clawSean/ursula-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/clawSean/ursula-plugin/issues"
+  },
+  "homepage": "https://github.com/clawSean/ursula-plugin#readme",
+  "keywords": [
+    "openclaw",
+    "openclaw-plugin",
+    "tts",
+    "voice-note",
+    "slash-command",
+    "telegram"
+  ],
   "scripts": {
     "check": "node scripts/check.mjs",
     "test": "node scripts/check.mjs"
   },
+  "files": [
+    "src",
+    "scripts",
+    "openclaw.plugin.json",
+    "README.md",
+    "LICENSE"
+  ],
   "openclaw": {
     "extensions": [
       "./src/index.js"

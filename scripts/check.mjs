@@ -114,11 +114,22 @@ const manifest = JSON.parse(await readFile(new URL("openclaw.plugin.json", root)
 assert.equal(manifest.id, "ursula", "manifest id must be 'ursula'");
 assert.equal(manifest.activation?.onStartup, true, "manifest must activate on startup");
 assert(manifest.activation?.onCommands?.includes("ursula"), "manifest must list ursula command");
+assert.equal(manifest.commandAliases?.[0]?.name, "ursula", "manifest must declare the ursula runtime slash alias");
+assert.equal(manifest.commandAliases?.[0]?.kind, "runtime-slash", "manifest must mark ursula as a runtime slash command");
 
 const pkg = JSON.parse(await readFile(new URL("package.json", root), "utf8"));
+assert.notEqual(pkg.private, true, "package must not be marked private when the repo is intended to be shared");
+assert.equal(pkg.license, "MIT", "package must declare the MIT license");
+assert.equal(pkg.repository?.url, "git+https://github.com/clawSean/ursula-plugin.git", "package must point at the public repo");
+assert(pkg.keywords?.includes("openclaw-plugin"), "package must be discoverable as an OpenClaw plugin");
+assert(pkg.files?.includes("openclaw.plugin.json"), "package files must include the plugin manifest");
 assert(pkg.openclaw?.extensions?.length > 0, "package.json must list extensions entry");
 assert(pkg.openclaw?.runtimeExtensions?.length > 0, "package.json must list runtimeExtensions entry");
 assert.equal(pkg.type, "module", "package.json must use ESM");
+
+const license = await readFile(new URL("LICENSE", root), "utf8");
+assert.match(license, /^MIT License/, "LICENSE must use the MIT license text");
+assert.match(license, /clawSean/, "LICENSE must name clawSean as copyright holder");
 
 // --- sanitizeMarkdownForSpeech edge cases ---
 assert.equal(mod.sanitizeMarkdownForSpeech(""), "", "empty string stays empty");

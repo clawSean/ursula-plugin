@@ -213,7 +213,6 @@ export function resolveGroupSessionKeyFromContext(ctx, agentId) {
 }
 
 async function resolveCommandSessionFile({ cfg, ctx, accountId }) {
-  const sessions = await importOpenClawSdk("session-store-runtime");
   const agentId = asText(accountId || ctx?.agentId || ctx?.config?.agentId) || "mainelobster";
   const slashSessionKey = asText(ctx?.SessionKey || ctx?.sessionKey);
   const groupSessionKey = resolveGroupSessionKeyFromContext(ctx, agentId);
@@ -225,6 +224,7 @@ async function resolveCommandSessionFile({ cfg, ctx, accountId }) {
   );
   if (!hasIdentity) return "";
 
+  const sessions = await importOpenClawSdk("session-store-runtime");
   const sessionScope = ctx?.config?.session?.scope ?? "per-sender";
   const mainKey = asText(ctx?.config?.session?.mainKey) || "main";
   const sessionCtx = {
